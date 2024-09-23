@@ -1,0 +1,45 @@
+@charset "utf-8";
+/* CSS Document */
+body{
+	margin: 0px;
+	padding: 0px;
+	background-color:aliceblue;
+}
+
+#main{
+	margin: 100px 35% 0px 35%;
+	border: thin solid white;
+	background-color: white;
+	border-radius: 30px;
+	padding: 20px;
+	
+}
+
+h4{
+	text-align: center;
+}
+
+input,select,.result p{
+	border: none;
+	border-bottom: thin solid #B9B4B4;
+	
+}
+
+.result #heading{
+	padding-left: 0px;
+}
+
+#convert{
+width: 100%;
+background-color:#4E6FEB;
+border:#4E6FEB;
+color: white;
+	padding: 15px;
+	border-radius: 10px;
+}
+
+#convert:hover{
+	cursor: pointer;
+}
+
+

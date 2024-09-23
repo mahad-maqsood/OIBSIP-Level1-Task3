@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Temperature Converter</title>
+<link href="style.css" rel="stylesheet">	
+</head>
+
+<body>
+<!-----HTML Code----->	
+<div id="wrap">
+	<div id="main">
+	<h4><b>Temperature Converter</b></h4><br>
+		<label for="degree">Degrees</label>	
+		<input type="number" id="degree" value="0" required>
+		<label for="unit">Type</label>	
+		<select name="temperatures" id="temp-type">
+		<option value="fahrenheit" id="fahrenheit">Fahrenheit</option>
+		<option value="kelvin" id="kelvin">Kelvin</option>	
+		</select>
+		<br>
+		<br>
+		<div class="result">
+		<span id="heading">Result</span>
+		<p id="rs"></p>	
+		</div>
+		<button id="convert">Convert</button>	
+	</div>
+</div>
+	
+<!----Java Script Code---->	
+<script>
+const result=document.querySelector("#rs");
+const degree=document.querySelector("#degree");
+const btn=document.querySelector("#convert");
+const Temtype=document.querySelector("#temp-type");
+
+
+btn.addEventListener("click", (e) => {
+  e.preventDefault();
+  convertToCelsius();
+});
+
+function convertToCelsius() {
+  let inputValue = degree.value;
+  
+  setTimeout( () => {
+    if (Temtype.value === "fahrenheit") {
+      const FahrenheitToCelsius = (inputValue - 32) * (5 / 9);
+      result.innerHTML = `${FahrenheitToCelsius.toFixed(3)} &deg;c`;
+    } else if (Temtype.value === "kelvin") {
+      const KelvinToCelsius = inputValue - 273.15;
+      result.innerHTML = `${KelvinToCelsius.toFixed(3)} &deg;c`;
+    }
+  }, 1200)
+}
+</script>	
+</body>
+</html>
